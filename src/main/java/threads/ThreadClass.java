@@ -1,6 +1,7 @@
 package threads;
 
 public class ThreadClass extends Thread {
+    @Override
     public void run() {
         System.out.println("ThreadClass is running");
     }
