@@ -7,22 +7,22 @@ public class UsingExecutorService {
     public static void main(String[] args) {
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(4);
 
-        fixedThreadPool.submit(() -> System.out.println("Hello"));
+        fixedThreadPool.submit(() -> System.out.println("Fixed Thread Pool"));
         fixedThreadPool.shutdown();
 
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 
-        cachedThreadPool.submit(() -> System.out.println("Hello"));
+        cachedThreadPool.submit(() -> System.out.println("Cached Thread Pool"));
         cachedThreadPool.shutdown();
 
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
-        singleThreadExecutor.submit(() -> System.out.println("Hello"));
+        singleThreadExecutor.submit(() -> System.out.println("Single Thread Executor"));
         singleThreadExecutor.shutdown();
 
         ExecutorService virtualThreadExecutor = Executors.newVirtualThreadPerTaskExecutor();
 
-        virtualThreadExecutor.submit(() -> System.out.println("Hello"));
+        virtualThreadExecutor.submit(() -> System.out.println("Virtual Thread Executor"));
         virtualThreadExecutor.shutdown();
     }
 }
