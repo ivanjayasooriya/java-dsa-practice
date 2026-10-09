@@ -6,6 +6,8 @@ public class ReverseLinkedList {
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
 
+        System.out.println("Before Reverse: " + head.val + " " + head.next.val + " " + head.next.next.val);
+
         ListNode prev = null;
         ListNode curr = head;
 
@@ -16,6 +18,10 @@ public class ReverseLinkedList {
             curr = next;
         }
 
-
+        System.out.print("\nAfter Reverse: ");
+        while (prev != null) {
+            System.out.print(prev.val + " ");
+            prev = prev.next;
+        }
     }
 }
