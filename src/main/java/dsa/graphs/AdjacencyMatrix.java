@@ -12,20 +12,39 @@ public class AdjacencyMatrix {
         };
 
         System.out.print("vertexData: ");
+
         for (String vertex : vertexData) {
             System.out.print(vertex + " ");
         }
+
         System.out.println();
         System.out.println();
 
         printAdjacencyMatrix(adjacencyMatrix);
+        printConnections(adjacencyMatrix, vertexData);
     }
 
     public static void printAdjacencyMatrix(int[][] matrix) {
         System.out.println("Adjacency Matrix:");
+
         for (int[] row : matrix) {
             for (int value : row) {
                 System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printConnections(int[][] matrix, String[] vertices) {
+        System.out.println("\nConnections for each vertex:");
+
+        for (int i = 0; i < vertices.length; i++) {
+            System.out.print(vertices[i] + ": ");
+
+            for (int j = 0; j < vertices.length; j++) {
+                if (matrix[i][j] == 1) { // if there is a connection
+                    System.out.print(vertices[j] + " ");
+                }
             }
             System.out.println();
         }
