@@ -1,0 +1,17 @@
+package design_patterns.creational.factory;
+
+public class Factory {
+    public Shape getShape(String shapeType) {
+        switch (shapeType) {
+            case "circle"-> {
+                return new Circle();
+            }
+            case "rectangle"-> {
+                return new Rectangle();
+            }
+            default-> {
+                return null;
+            }
+        }
+    }
+}
